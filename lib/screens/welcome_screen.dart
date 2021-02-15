@@ -1,4 +1,6 @@
 
+import 'package:crypto_app/screens/chat_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +17,8 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin{
   var _formkey =GlobalKey<FormState>();
+  String get _email => _emailController.text;
+  String get _password => _passwordController.text;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
    final FocusNode _emailFocusNode = FocusNode();
@@ -23,6 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
   bool _passwordVisible = false;
   AnimationController controller;
   Animation animation;
+  final _auth = FirebaseAuth.instance;
   var color1 =  Color(0xffFF593D);
   var color2 = Color(0xffF2F9FC);
   var color3 = Color(0xffAFD8D7);
@@ -52,6 +57,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
     });
     _emailController.clear();
     _passwordController.clear();
+  }
+  void _submit() async {
+    try {
+      if (_formType == EmailSignInFormType.register) {
+        final newUser = await _auth.createUserWithEmailAndPassword(
+            email: _email, password: _password);
+        if (newUser != null) {
+          Navigator.pushNamed(context, ChatScreen.id);
+        }
+      } else {
+        final user = await _auth.signInWithEmailAndPassword(email: _email, password: _password);
+        if(user!=null){
+          Navigator.pushNamed(context, ChatScreen.id);
+        }
+      }
+    }catch(e){
+    print(e);
+    }
   }
 
   @override
