@@ -80,11 +80,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     final primaryText = _formType == EmailSignInFormType.signIn
-        ? 'Login In'
+        ? 'LOGIN IN'
         : 'SIGN UP';
     final secondaryText = _formType == EmailSignInFormType.signIn
-        ? 'Need an account? \n         Sign up'
-        : 'Have an account? \n         Sign in';
+        ? 'Need an account? \nSign up'
+        : 'Have an account? \nSign in';
 
 
     return Scaffold(
@@ -203,7 +203,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                                       }
                                 }),
                                 FlatButton(onPressed:_toggleFormType,
-                                  child: Text(secondaryText),)
+                                  child: Text(secondaryText,style: TextStyle(color: color1),),)
                               ],
                             ),
                           )

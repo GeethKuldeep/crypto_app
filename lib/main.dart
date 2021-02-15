@@ -1,4 +1,5 @@
 
+import 'package:crypto_app/screens/Splash_screen.dart';
 import 'package:crypto_app/screens/chat_screen.dart';
 import 'package:crypto_app/screens/landing_screen.dart';
 import 'package:crypto_app/screens/login_screen.dart';
@@ -19,9 +20,10 @@ class Crypto extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: LandingScreen.id ,
+        initialRoute: SplashScreen.id,
         routes:{
           LandingScreen.id:(context)=> LandingScreen(),
+          SplashScreen.id:(context)=> SplashScreen(),
           WelcomeScreen.id:(context)=> WelcomeScreen(),
           LoginScreen.id:(context)=> LoginScreen(),
           RegistrationScreen.id:(context)=> RegistrationScreen(),
