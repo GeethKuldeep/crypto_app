@@ -47,8 +47,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
   }
   void _toggleFormType() {
     setState(() {
-
       _formType =_formType== EmailSignInFormType.signIn ? EmailSignInFormType.register : EmailSignInFormType.signIn;
+      print('formtype changed');
     });
     _emailController.clear();
     _passwordController.clear();
@@ -179,9 +179,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                                         _submit();
                                       }
                                 }),
-                                FlatButton(onPressed:(){
-                                  _toggleFormType;
-                                }, child: Text(secondaryText),)
+                                FlatButton(onPressed:_toggleFormType,
+                                  child: Text(secondaryText),)
                               ],
                             ),
                           )
