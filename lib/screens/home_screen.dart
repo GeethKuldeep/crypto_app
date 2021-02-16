@@ -55,9 +55,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: color2,
       floatingActionButton: SizedBox(
-        height: 65,
-        width: 65,
+        height:70,
+        width: 70,
         child: FloatingActionButton(
+
             backgroundColor: Colors.white,
             child: Icon(Icons.add,size: 45,),
             foregroundColor: color1,
@@ -70,10 +71,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
+        notchMargin: 8.0,
         color: Colors.white,
         shape: CircularNotchedRectangle(),
         child: Container(
-          height: 80,
+          height: 65,
           child:  Padding(
             padding: const EdgeInsets.symmetric(horizontal:20.0),
             child: Row(
