@@ -1,4 +1,4 @@
-import 'package:crypto_app/screens/chat_screen.dart';
+import 'package:crypto_app/screens/home_screen.dart';
 import 'package:crypto_app/screens/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class _LandingScreenState extends State<LandingScreen> {
           if (snapshot.connectionState == ConnectionState.active) {
             User user = snapshot.data;
             if (user != null) {
-              return ChatScreen();
+              return HomeScreen();
             }
             return WelcomeScreen();
           }

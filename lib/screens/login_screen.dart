@@ -1,4 +1,4 @@
-import 'package:crypto_app/screens/chat_screen.dart';
+import 'package:crypto_app/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
@@ -106,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                      try{
                        final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
                        if(user!=null){
-                         Navigator.pushReplacementNamed(context, ChatScreen.id);
+                         Navigator.pushReplacementNamed(context, HomeScreen.id);
                        }
                        setState(() {
                          Showspinner=false;

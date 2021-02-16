@@ -1,4 +1,4 @@
-import 'package:crypto_app/screens/chat_screen.dart';
+import 'package:crypto_app/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
@@ -106,7 +106,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
                         print('user registered');
                         if(newUser!=null){
-                          Navigator.pushReplacementNamed(context, ChatScreen.id);
+                          Navigator.pushReplacementNamed(context, HomeScreen.id);
                         }
                         setState(() {
                           Showspinner=false;
