@@ -1,11 +1,9 @@
 import 'package:crypto_app/screens/Add_stock_screen.dart';
 import 'package:crypto_app/screens/Stock_List_screen.dart';
 import 'package:crypto_app/screens/profile_screen.dart';
-import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:crypto_app/constants.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -103,31 +101,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-      ),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        leading: null,
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(Icons.logout),
-              onPressed: () {
-                _auth.signOut();
-                Navigator.pop(context);
-              }),
-        ],
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Hero(tag: 'logo',
-                child: Container(
-                    height: 45.0,
-                    child: Image.asset('images/logo.png')
-                )
-            ),
-            Text('Homepage'),
-          ],
-        ),
-        backgroundColor: Colors.lightBlueAccent,
       ),
       body:Container(
         decoration: BoxDecoration(color: Colors.white),
