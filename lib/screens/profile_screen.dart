@@ -27,40 +27,49 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color2,
-      body:Stack(
-        children: [
-          Column(
-            children: [
-              Expanded(
-                flex: 1,
-                child: Container(
+        backgroundColor: color2,
+        body: Stack(
+          children: [
+            Column(
+              children: [
+                Container(
                   decoration: BoxDecoration(
                       color: color4,
-                      borderRadius: BorderRadius.only(bottomLeft: Radius.circular(55),bottomRight: Radius.circular(55))
-                  ),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(55),
+                          bottomRight: Radius.circular(55))),
                   child: Column(
                     children: [
-                      SizedBox(height: 15,),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          SizedBox(width: 40,),
+                          SizedBox(
+                            width: 40,
+                          ),
                           Column(
                             children: [
                               SizedBox(
                                   height: 95,
                                   width: 95,
                                   child: Image.asset('images/logo.png')),
-
-                              Text('Clean Pegasus',style: TextStyle(fontSize: 30,color: Colors.white),)
+                              Text(
+                                'Clean Pegasus',
+                                style: TextStyle(
+                                    fontSize: 30, color: Colors.white),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
                             ],
                           ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(bottom:78.0),
+                                padding: const EdgeInsets.only(bottom: 78.0),
                                 child: IconButton(
                                     icon: Icon(Icons.logout),
                                     color: Colors.white,
@@ -73,23 +82,25 @@ class _ProfileState extends State<Profile> {
                             ],
                           ),
                         ],
-
                       ),
                     ],
                   ),
                 ),
-              ),
-              Column(
-                  children: [
-                    SizedBox(
+                SizedBox(
                       height: 100,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left:20.0,right: 20.0),
+                Padding(
+                      padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('My List',style: TextStyle(fontSize: 25,color: color3,fontWeight: FontWeight.bold),),
+                          Text(
+                            'My List',
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: color3,
+                                fontWeight: FontWeight.bold),
+                          ),
                           ToggleSwitch(
                             minWidth: 55.0,
                             minHeight: 28,
@@ -107,215 +118,232 @@ class _ProfileState extends State<Profile> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 15,),
-                    SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15),
-                            ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(top:25.0,bottom:25.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Text('Bitcoin',style: TextStyle(fontSize: 22,color:color1,fontWeight: FontWeight.bold),),
-                                    Text('BTC',style: TextStyle(fontSize: 18,color: color4,fontWeight: FontWeight.bold),),
-                            Text('₹9,497.12',style: TextStyle(fontSize: 18,color: Colors.black),),
-                                    Text('₹210.65',style: TextStyle(fontSize: 18,color:  Colors.black,fontWeight: FontWeight.bold),),
-                                  ],
+                SizedBox(
+                      height: 15,
+                    ),
+                Expanded(
+                      child: ListView.builder(
+                          itemCount: 4,
+                          itemBuilder: (BuildContext ctxt, int Index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 25.0, bottom: 25.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text(
+                                        'Bitcoin',
+                                        style: TextStyle(
+                                            fontSize: 22,
+                                            color: color1,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        'BTC',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: color4,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        '₹9,497.12',
+                                        style: TextStyle(
+                                            fontSize: 18, color: Colors.black),
+                                      ),
+                                      Text(
+                                        '₹210.65',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(top:25.0,bottom:25.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Text('Bitcoin',style: TextStyle(fontSize: 22,color:color1,fontWeight: FontWeight.bold),),
-                                    Text('BTC',style: TextStyle(fontSize: 18,color: color4,fontWeight: FontWeight.bold),),
-                                    Text('₹9,497.12',style: TextStyle(fontSize: 18,color: Colors.black),),
-                                    Text('₹210.65',style: TextStyle(fontSize: 18,color:  Colors.black,fontWeight: FontWeight.bold),),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(top:25.0,bottom:25.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Text('Bitcoin',style: TextStyle(fontSize: 22,color:color1,fontWeight: FontWeight.bold),),
-                                    Text('BTC',style: TextStyle(fontSize: 18,color: color4,fontWeight: FontWeight.bold),),
-                                    Text('₹9,497.12',style: TextStyle(fontSize: 18,color: Colors.black),),
-                                    Text('₹210.65',style: TextStyle(fontSize: 18,color:  Colors.black,fontWeight: FontWeight.bold),),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
+                            );
+                          }),
+                    ),
 
-                  ],
-                ),
-
-            ],
-          ),
-          Positioned(
-            top:150,
-            left: 12,
-            right: 12,
-            child: Container(
-              width: 150,
-              child: Card(
+              ],
+            ),
+            Positioned(
+              top: 150,
+              left: 12,
+              right: 12,
+              child: Container(
+                width: 150,
+                child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              FlatButton(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                onPressed: (){
-                                  setState(() {
-                                    pressAttention1 = !pressAttention1;
-                                     pressAttention2 = false;
-                                     pressAttention3 = false;
-                                     pressAttention4 = false;
-                                  });
-                                },
-                                color: pressAttention1 ? color1 : Colors.white,
-
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                      children: [
-                                        Text('8',style: TextStyle(fontSize: 25,color: pressAttention1 ? Colors.white: color3,),),
-                                        Text('List',style: TextStyle(fontSize: 12,color: pressAttention1 ? Colors.white: color3,),)
-                                      ],
-                                    ),
-                                ),
-
-                              ),
-                              FlatButton(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                color: pressAttention2 ? color1 : Colors.white,
-                                onPressed: (){
-                                  setState(() {
-                                    pressAttention2 = !pressAttention2;
-                                     pressAttention1 = false;
-                                     pressAttention3 = false;
-                                     pressAttention4 = false;
-
-
-                                  });
-
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                      children: [
-                                        Text('5',style: TextStyle(fontSize: 25,color: pressAttention2 ? Colors.white: color3,),),
-                                        Text('Buy',style: TextStyle(fontSize: 12,color: pressAttention2 ? Colors.white: color3,),)
-                                      ],
-                                    ),
-                                ),
-
-                              ),
-                              FlatButton(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                color: pressAttention3 ? color1 : Colors.white,
-                                onPressed: (){
-                                  setState(() {
-                                    pressAttention3 = !pressAttention3;
-                                     pressAttention1 = false;
-                                     pressAttention2 = false;
-                                    pressAttention4 = false;
-
-                                  });
-
-
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                      children: [
-                                        Text('3',style: TextStyle(fontSize: 25,color: pressAttention3 ? Colors.white: color3,),),
-                                        Text('Sell',style: TextStyle(fontSize: 12,color: pressAttention3 ? Colors.white: color3,),)
-                                      ],
-                                    ),
-                                ),
-
-                              ),
-                              FlatButton(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                color: pressAttention4? color1 : Colors.white,
-                                onPressed: (){
-                                  setState(() {
-                                    pressAttention4 = !pressAttention4;
-                                    pressAttention1 = false;
-                                     pressAttention2 = false;
-                                      pressAttention3 = false;
-
-
-                                  });
-
-
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                      children: [
-                                        Text('2',style: TextStyle(fontSize: 25,color: pressAttention4 ? Colors.white: color3,),),
-                                        Text('Knowtify',style: TextStyle(fontSize: 12,color: pressAttention4 ? Colors.white: color3,),)
-                                      ],
-                                    ),
-                                ),
-
-                              ),
-                            ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        FlatButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                      ),
+                          onPressed: () {
+                            setState(() {
+                              pressAttention1 = !pressAttention1;
+                              pressAttention2 = false;
+                              pressAttention3 = false;
+                              pressAttention4 = false;
+                            });
+                          },
+                          color: pressAttention1 ? color1 : Colors.white,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Text(
+                                  '8',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    color:
+                                        pressAttention1 ? Colors.white : color3,
+                                  ),
+                                ),
+                                Text(
+                                  'List',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color:
+                                        pressAttention1 ? Colors.white : color3,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        FlatButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          color: pressAttention2 ? color1 : Colors.white,
+                          onPressed: () {
+                            setState(() {
+                              pressAttention2 = !pressAttention2;
+                              pressAttention1 = false;
+                              pressAttention3 = false;
+                              pressAttention4 = false;
+                            });
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Text(
+                                  '5',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    color:
+                                        pressAttention2 ? Colors.white : color3,
+                                  ),
+                                ),
+                                Text(
+                                  'Buy',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color:
+                                        pressAttention2 ? Colors.white : color3,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        FlatButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          color: pressAttention3 ? color1 : Colors.white,
+                          onPressed: () {
+                            setState(() {
+                              pressAttention3 = !pressAttention3;
+                              pressAttention1 = false;
+                              pressAttention2 = false;
+                              pressAttention4 = false;
+                            });
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Text(
+                                  '3',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    color:
+                                        pressAttention3 ? Colors.white : color3,
+                                  ),
+                                ),
+                                Text(
+                                  'Sell',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color:
+                                        pressAttention3 ? Colors.white : color3,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        FlatButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          color: pressAttention4 ? color1 : Colors.white,
+                          onPressed: () {
+                            setState(() {
+                              pressAttention4 = !pressAttention4;
+                              pressAttention1 = false;
+                              pressAttention2 = false;
+                              pressAttention3 = false;
+                            });
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Text(
+                                  '2',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    color:
+                                        pressAttention4 ? Colors.white : color3,
+                                  ),
+                                ),
+                                Text(
+                                  'Knowtify',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color:
+                                        pressAttention4 ? Colors.white : color3,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
+                  ),
+                ),
+              ),
             ),
-            ),
-
-
-
-
-
-
-        ],
-      )
-    );
+          ],
+        ));
   }
 }
