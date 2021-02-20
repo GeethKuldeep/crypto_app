@@ -25,7 +25,7 @@ class _StockListState extends State<StockList> {
     return Scaffold(
       backgroundColor: color2,
       body:Padding(
-        padding: const EdgeInsets.only(top:50.0),
+        padding: const EdgeInsets.only(left:50.0,right: 50,top: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -36,7 +36,7 @@ class _StockListState extends State<StockList> {
                 width: 286,
                 height: 38,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   color: Colors.white,
                 ),
 
@@ -46,7 +46,7 @@ class _StockListState extends State<StockList> {
                       children: [
                         FlatButton(
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           onPressed: () {
                             setState(() {
@@ -71,7 +71,7 @@ class _StockListState extends State<StockList> {
                         ),
                         FlatButton(
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           color: pressAttention2 ? color1 : Colors.white,
                           onPressed: () {
@@ -96,7 +96,7 @@ class _StockListState extends State<StockList> {
                         ),
                         FlatButton(
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           color: pressAttention3 ? color1 : Colors.white,
                           onPressed: () {
@@ -123,6 +123,59 @@ class _StockListState extends State<StockList> {
                     ),
 
               ),
+            ),
+            SizedBox(height: 25,),
+            Stack(
+                children: [
+                  Image.asset('images/Rectangle.png'),
+                  Image.asset('images/graph.png'),
+
+
+        ]
+            ),
+            SizedBox(height: 15,),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 4,
+                  itemBuilder: (BuildContext ctxt, int Index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 15.0, bottom: 15.0),
+                          child: Row(
+                            mainAxisAlignment:
+                            MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                'Bitcoin',
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    color: color1,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'BTC',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: color4,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '₹9,497.12',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
             ),
 
           ],
